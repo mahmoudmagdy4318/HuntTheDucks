@@ -3,24 +3,22 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-        <style>
-            #formId{
-                text-align: center;
-                margin-top: 300px;
-            }
-        </style>
+        <link rel="stylesheet" href="styles/gameStyles.css">
     </head>
 
     <body>
-        <form id="formId">
-            <h2>Player Login</h2>
-            <i class="fas fa-user"></i>
-            <input placeholder="enter your name" type="text" id="username">
-            <br>
-            <br>
-            <input type="submit" value="playEasy" id="playEasyBtn">
-            <input type="submit" value="playHard" id="playHardBtn">
-        </form> 
+        <div id="homepage">
+            <form id="formId" action="pg2.html">
+                <h2>Player Login</h2>
+                <i class="fas fa-user"></i>
+                <input placeholder="enter your name" type="text" id="username" required>
+                <br>
+                <br>
+                <input type="submit" value="playEasy" id="playEasyBtn">
+                <input type="submit" value="playHard" id="playHardBtn">
+            </form>
+        </div>
+         
         <!-- to do sweetalert popup library to handle winning or losing game -->
         
         <script src="js/jquery-3.2.1.js"></script>
