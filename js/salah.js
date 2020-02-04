@@ -8,6 +8,7 @@ let userName, gamelevel;
 $("input:first").on("blur", function() {
     if ($(this).val().match('^[a-zA-Z]{3,16}$')){
         userName=$(this).val();
+        console.log("hiii");
         
     } else {
         alert("That's not a name");
