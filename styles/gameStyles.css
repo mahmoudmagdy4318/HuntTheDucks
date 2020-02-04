@@ -2,10 +2,10 @@
     padding: 0;
     margin: 0;
 }
+
 #homepage{
+    background-image: url("gallery/home.jpg");
     width: 100%;
     height: 100%;
-    background-image: url("home.jpg");
     text-align: center;
-    /* background-color: aqua; */
 }
