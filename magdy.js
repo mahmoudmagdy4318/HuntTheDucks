@@ -51,3 +51,8 @@ class DiedDuck{  //class for creating died ducks
         return diedDuck;
     }    
 }
+class ExplodedBomb{
+    createExplodedBomb(){
+        let explodedBombObject=$(`<span class="Bomb"><img src="gallery/ExplodedBomb.png"></span>`);
+    }
+}
