@@ -28,6 +28,9 @@ body{
     transform: scale(2);
     background-color: rgba(173, 78, 0, 0.6);
 }
+#playEasyBtn, #playHardBtn{
+    cursor: pointer;
+}
 #form{
     margin: 100px auto;
 }
