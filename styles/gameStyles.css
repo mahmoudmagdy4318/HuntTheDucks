@@ -19,7 +19,8 @@ body{
     background-color: rgba(218, 238, 227, 0.2);
     transition: transform 3s ;
     text-align: center;
-    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
 
 }
 #homepage:hover, #homepage:active{
@@ -27,5 +28,13 @@ body{
     background-color: rgba(212, 226, 218, 0.6);
 }
 form{
-
+    margin: 100px auto;
+}
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
 }
