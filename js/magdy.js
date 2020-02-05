@@ -19,21 +19,24 @@ class Duck{      //class for creating ducks
         return duckObject;
     }
 }
+
 class Dog{   //class for creating the dog
     createDog(){
         let dogObject=$(`<span class="Dog"><img src="gallery/dog.png"></span>`);
         return dogObject; 
     }
 }
+
 class Bomb{   //class for creating the bomb
     createBomb(){
         let bombObject=$(`<span class="Bomb"><img src="gallery/Bomb.png"></span>`);
     }
 }
+
 class DiedDuck{  //class for creating died ducks
     constructor(duckColor){
         this.diedDuckColor=duckColor;
-    switch(this.diedDuckColor)
+        switch(this.diedDuckColor)
         {
             case "red":
                 this.imageSrc="gallery/1.jpg";
@@ -46,6 +49,7 @@ class DiedDuck{  //class for creating died ducks
                 break;      
         }
     }
+    
     createDiedDuck(){
         let diedDuck=$(`<span class="DiedDuck"><img src=${this.imageSrc}></span>`);
         return diedDuck;
