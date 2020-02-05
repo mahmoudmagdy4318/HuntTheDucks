@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-body{
+#homepage{
     position: fixed;
     background-image: url("../gallery/home.jpg");
     background-size: 100%;
@@ -10,7 +10,7 @@ body{
     height: 100%;
     text-align: center;
 }
-#homepage{
+#homepage_maincontainer{
     position: fixed;
     top: 30%;
     left: 35%;
@@ -24,7 +24,7 @@ body{
     border-radius: 20%;
 
 }
-#homepage:hover, #homepage:active{
+#homepage_maincontainer:hover, #homepage_maincontainer:active{
     transform: scale(2);
     background-color: rgba(173, 78, 0, 0.6);
 }
@@ -34,11 +34,19 @@ body{
 #form{
     margin: 100px auto;
 }
-button {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
+#username{
+    border: 2px solid;
+    border-color: rgb(255, 248, 2);
+    background-color: rgb(134, 217, 3);
+    width: 150px;
+    height: 50px;
+}
+
+#gamepage{
+    position: fixed;
+    background-image: url("../gallery/gamepage.jpg");
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
