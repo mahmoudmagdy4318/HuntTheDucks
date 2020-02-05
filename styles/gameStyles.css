@@ -16,18 +16,22 @@ body{
     left: 35%;
     width: 30%;
     height: 40%;
-    background-color: rgba(218, 238, 227, 0.2);
+    background-color: rgba(173, 78, 0, 0.2);
     transition: transform 3s ;
     text-align: center;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    /* border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%; */
+    border-radius: 20%;
 
 }
 #homepage:hover, #homepage:active{
     transform: scale(2);
-    background-color: rgba(212, 226, 218, 0.6);
+    background-color: rgba(173, 78, 0, 0.6);
 }
-form{
+#playEasyBtn, #playHardBtn{
+    cursor: pointer;
+}
+#form{
     margin: 100px auto;
 }
 button {
