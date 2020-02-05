@@ -1,25 +1,27 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-        <link rel="stylesheet" href="styles/gameStyles.css">
-    </head>
 
-    <body>
-        <div id="homepage">
-            <form id="formId" action="pg2.html">
-                <h2>Player Login</h2>
-                <i class="fas fa-user"></i>
-                <input placeholder="enter your name" type="text" id="username" required>
-                <br>
-                <br>
-                <button  id="playEasyBtn"><img src="gallery/easy.png" width="100px" height="50px"></button>
-                <button  id="playHardBtn"><img src="gallery/hard.png" width="100px" height="50px"></button>
-            </form>
-        </div>   
-        <!-- to do sweetalert popup library to handle winning or losing game -->       
-        <script src="js/jquery-3.2.1.js"></script>
-        <script src="js/salah.js"></script>
-    </body>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="styles/gameStyles.css">
+</head>
+
+<body>
+    <div id="homepage">
+        <div id="form">
+            <h2>Player Login</h2>
+            <i class="fas fa-user"></i>
+            <input placeholder="enter your name" type="text" id="username" required>
+            <br>
+            <br>
+            <img src="gallery/easy.png" width="100px" height="50px"><button id="playEasyBtn"></button></img>
+            <img src="gallery/hard.png" width="100px" height="50px"><button id="playHardBtn"></button></img>
+        </div>
+    </div>
+    <!-- to do sweetalert popup library to handle winning or losing game -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/salah.js"></script>
+</body>
+
 </html>
