@@ -2,54 +2,54 @@
 
 let PageEasyLevel; 
 let PageHardLevel; 
-let userName, gamelevel; 
+let username, gamelevel; 
 
-// input name validation 
-$("input:first").on("blur", function() {
-    if ($(this).val().match('^[a-zA-Z]{3,16}$')){
-        userName=$(this).val();
-        console.log("hiii");
-       
-    } else {
-        alert("That's not a name");
-    }
-});
+let img1Id = $("img")[0].id; 
+let img2Id = $("img")[1].id;
+
 
 // routing to other pages depending on game level selection by user 
-$("#playEasyBtn").on("click", function(){ // easy level page 
-    PageEasyLevel = true; 
-    PageHardLevel = false;
-    
-    if(PageEasyLevel && userName){
+
+$("img:first").on("click", function(){ // easy level page 
+    PageEasyLevel = true;
+    username = $("#username").val();
+    if(PageEasyLevel && username){
         window.location.href="../pg2.html";
         // sending data stored from homepage to other pages using local storage !
-        gamelevel = $("#playEasyBtn").val();
-        localStorage.setItem({
-            "gameLevel":gamelevel,
-            "userName": userName
-        });
+        gamelevel = img1Id;
+        localStorage.setItem("gamelevel", gamelevel);
+        localStorage.setItem("username", username);
+        console.log("easy"); 
     }
 }); 
 
-$("#playHardBtn").on("click", function(){  // hard level page 
-    PageHardLevel = true;
-    PageEasyLevel = false;
-    if(PageHardLevel && userName){
-        window.location.href="../pg2.html"; 
-        gamelevel = $("#playHardBtn").val();
 
-        localStorage.setItem({
-            "gameLevel":gamelevel,
-            "userName": userName
-        });
+$("img:eq(1)").on("click", function(){  // hard level page 
+    username = $("#username").val();
+    PageHardLevel = true;
+    if(PageHardLevel && username){
+        window.location.href="../pg2.html"; 
+        gamelevel = img2Id;
+        localStorage.setItem("gamelevel", gamelevel);
+        localStorage.setItem("username", username);
+        console.log("hard");
     }
 });
 
 
-// todo::
-// localStorage 
-// mina: will get content of url by local storage in second page 
-// window.location.hash+=userName;
 
+
+
+
+// input name validation 
+// $("input:first").on("blur", function() {
+//     if ($(this).val().match('^[a-zA-Z]{3,16}$')){
+//         userName=$(this).val();
+//         console.log("hiii");
+       
+//     } else {
+//         alert("That's not a name");
+//     }
+// });
 
 
