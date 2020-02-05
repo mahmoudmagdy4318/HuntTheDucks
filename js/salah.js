@@ -8,7 +8,8 @@ let userName, gamelevel;
 $("input:first").on("blur", function() {
     if ($(this).val().match('^[a-zA-Z]{3,16}$')){
         userName=$(this).val();
-        
+        console.log("hiii");
+       
     } else {
         alert("That's not a name");
     }
@@ -20,7 +21,7 @@ $("#playEasyBtn").on("click", function(){ // easy level page
     PageHardLevel = false;
     
     if(PageEasyLevel && userName){
-        window.location.href="pg2.html";
+        // window.location.href="../pg2.html";
         // sending data stored from homepage to other pages using local storage !
         gamelevel = $("#playEasyBtn").val();
         localStorage.setItem({
@@ -34,7 +35,7 @@ $("#playHardBtn").on("click", function(){  // hard level page
     PageHardLevel = true;
     PageEasyLevel = false;
     if(PageHardLevel && userName){
-        window.location.href="pg2.html"; 
+        // window.location.href="../pg2.html"; 
         gamelevel = $("#playHardBtn").val();
 
         localStorage.setItem({
