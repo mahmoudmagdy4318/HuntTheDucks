@@ -1,25 +1,46 @@
 <html>
-    <head>
-        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet"> -->
-        <link rel="stylesheet" href="styles/gameStyles.css">
-    </head>
 
-    <body>
-        <div id="homepage">
-            <form id="formId" action="pg2.html">
-                <h2>Player Login</h2>
-                <i class="fas fa-user"></i>
-                <input placeholder="enter your name" type="text" id="username" required>
-                <br>
-                <br>
-                <button  id="playEasyBtn"><img src="gallery/easy.png" width="100px" height="50px"></button>
-                <button  id="playHardBtn"><img src="gallery/hard.png" width="100px" height="50px"></button>
-            </form>
-        </div>   
-        <!-- to do sweetalert popup library to handle winning or losing game -->       
-        <script src="js/jquery-3.2.1.js"></script>
-        <script src="js/salah.js"></script>
-    </body>
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet"> -->
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/gameStyles.css">
+    <!-- <style>
+        /* #startBtn{
+            font-size: 60px;
+            text-align: center;
+            margin-left: 20px;
+            margin-top: 570px;
+            color: brown;
+            background-color: lightyellow;
+        } */
+    </style> -->
+</head>
+
+<body id="homepage">
+    <button id="startBtn"> Start Game
+    </button>
+
+    <audio id = "main_theme" src="main_theme.mp3"> </audio>
+    <div id="homepage_maincontainer">
+        <div id="form"  action="pg2.html">
+            <span class="fa fa-user fa-3x " ></span>
+            <input placeholder="enter your name" type="text" id="username" required autocomplete="off">
+            <br>
+            <br>
+            <img id ="easyLevel" src="gallery/easy.png" width="100px" height="50px" id="playEasyBtn">
+            <img id ="hardlevel"  src="gallery/hard.png" width="100px" height="50px" id="playHardBtn">
+        </div>
+    </div>
+    <!-- to do sweetalert popup library to handle winning or losing game -->
+    <script src="js/JQuery-3.3.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/salah.js"></script>
+</body>
+
 </html>
