@@ -1,15 +1,19 @@
 <html>
     <head>
-        <script src="js/jquery-3.2.1.js"></script>
         <link rel="stylesheet" href="styles/gameStyles.css">
     </head>
     <body id="gamepage">
-        <h1>welcome! <span></span></h1>
-        <p></p>
+        <img src="gallery/exit.png" id="exit">
+        <img src="gallery/sound.png" class="volume">
+        <audio class= "main_theme" src="main_theme.mp3"> </audio>
+        <div id="usernameplace"></div>
+        <img src="gallery/start.png" id="startbtn">
+        
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/salah.js"></script>
     </body>
 
     <script>
-        $("span").text(localStorage.getItem("username"));
-        $("p").text(localStorage.getItem("gamelevel"));
+        $("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
     </script>
 </html>
