@@ -16,7 +16,7 @@
     left: 35%;
     width: 30%;
     height: 40%;
-    background-color: rgba(173, 78, 0, 0.2);
+    background-color: rgba(149, 188, 255,0.2);
     transition: transform 3s ;
     text-align: center;
     /* border-top-left-radius: 50%;
@@ -34,7 +34,7 @@
 }
 #form{
     margin-top: 100px;
-    margin-left: 130px;
+    margin-left: 155px;
     display: -webkit-box;
 }
 #username{
@@ -42,17 +42,41 @@
     border-radius: 10px;
     width: 150px;
     height: 50px;
-    color: rgb(149, 188, 255);
-    box-shadow: rgb(64, 128, 5) 5px 5px 150px inset;
+    color: white;
+    background-color: transparent;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     outline: none;
+    text-indent: 20px;
 }
-#usericon{
+/* #usericon{
     margin-right: 5px;
     color:rgb(144,207,90);
-}
+} */
 #playbtns{
     margin-top: 20px;
 }
+.volume{
+    position: absolute;
+    left: 90%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.exit{
+    position: absolute;
+    left: 2%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+#exit{
+    position: absolute;
+    left: 2%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
 
 #gamepage{
     position: fixed;
@@ -61,4 +85,23 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    cursor: url("../gallery/arrow.png"), auto;
+}
+#usernameplace{
+    text-align: center;
+    position: absolute;
+    top: 88%;
+    left: 65%;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font-size:  40px ;
+    font-weight: bolder;
+    font-family: "Comic Sans MS", cursive, sans-serif; 
+}
+#startbtn{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    cursor: pointer;
 }

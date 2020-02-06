@@ -1,28 +1,26 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" -->
+        <!-- integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet"> -->
     <link rel="stylesheet" href="styles/gameStyles.css">
 
 </head>
 
 <body id="homepage">
-    <button id="startBtn"> Start Game
-    </button>
-
-    <audio id = "main_theme" src="main_theme.mp3"> </audio>
+    <img src="gallery/exit.png" class="exit">
+    <img src="gallery/sound.png" class="volume">
+    <audio class= "main_theme" src="main_theme.mp3"> </audio>
     <div id="homepage_maincontainer">
         <div id="form"  action="pg2.html">
-            <div id="icon"><span class="fas fa-user fa-3x" id="usericon"></span></div>
             <div><input placeholder="enter your name" type="text" id="username" required autocomplete="off"></div>
             <br>
             <br>
         </div>
         <div id="playbtns">
-            <img id ="easyLevel" src="gallery/easy.png" width="100px" height="50px" id="playEasyBtn">
-            <img id ="hardlevel"  src="gallery/hard.png" width="100px" height="50px" id="playHardBtn">
+            <img   src="gallery/easy.png" width="100px" height="50px" id="playEasyBtn">
+            <img   src="gallery/hard.png" width="100px" height="50px" id="playHardBtn">
         </div>
     </div>
     <!-- to do sweetalert popup library to handle winning or losing game -->

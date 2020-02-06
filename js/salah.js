@@ -10,7 +10,7 @@ let img2Id = $("img")[1].id;
 
 // routing to other pages depending on game level selection by user 
 
-$("img:first").on("click", function(){ // easy level page 
+$("#playEasyBtn").on("click", function(){ // easy level page 
     PageEasyLevel = true;
     username = $("#username").val();
     if(PageEasyLevel && username){
@@ -24,7 +24,7 @@ $("img:first").on("click", function(){ // easy level page
 }); 
 
 
-$("img:eq(1)").on("click", function(){  // hard level page 
+$("#playHardBtn").on("click", function(){  // hard level page 
     username = $("#username").val();
     PageHardLevel = true;
     if(PageHardLevel && username){
@@ -38,12 +38,28 @@ $("img:eq(1)").on("click", function(){  // hard level page
 
 // adding audio to homepage 
 
-let sound = document.getElementById("main_theme"); 
+let sound = document.getElementsByClassName("main_theme")[0]; 
+sound.loop=false;
 function playAudio() { 
-  sound.play(); 
-  sound.loop = true;
+  if(sound.loop!=true){
+    sound.play();
+    $(".volume").attr("src","gallery/soundoff.png");
+    sound.loop = true;
+  }
+  else{
+      sound.pause();
+      $(".volume").attr("src","gallery/sound.png");
+      sound.loop=false;
+  }  
 } 
 
-startBtn.addEventListener("click", playAudio);
+$(".volume").on("click",playAudio);
+
+$(".exit").on("click",function(){
+    window.close();
+})
+$("#exit").on("click",function(){
+    window.location.href="../pg1.html"; 
+});
 
 
