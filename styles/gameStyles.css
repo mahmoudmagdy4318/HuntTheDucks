@@ -26,20 +26,32 @@
 }
 #homepage_maincontainer:hover, #homepage_maincontainer:active{
     transform: scale(2);
-    background-color: rgba(173, 78, 0, 0.6);
+    background-color: rgba(149, 188, 255,0.6);
 }
+
 #playEasyBtn, #playHardBtn{
     cursor: pointer;
 }
 #form{
-    margin: 100px auto;
+    margin-top: 100px;
+    margin-left: 130px;
+    display: -webkit-box;
 }
 #username{
-    border: 2px solid;
-    border-color: rgb(255, 248, 2);
-    background-color: rgb(134, 217, 3);
+    border-color: rgb(173, 78, 0);
+    border-radius: 10px;
     width: 150px;
     height: 50px;
+    color: rgb(149, 188, 255);
+    box-shadow: rgb(64, 128, 5) 5px 5px 150px inset;
+    outline: none;
+}
+#usericon{
+    margin-right: 5px;
+    color:rgb(144,207,90);
+}
+#playbtns{
+    margin-top: 20px;
 }
 
 #gamepage{

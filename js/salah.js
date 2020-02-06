@@ -7,14 +7,6 @@ let username, gamelevel;
 let img1Id = $("img")[0].id; 
 let img2Id = $("img")[1].id;
 
-//input name validation 
-$("input:first").on("blur", function() {
-    if ($(this).val().match('^[a-zA-Z]{3,16}$')){
-        userName=$(this).val();
-    } else {
-        alert("That's not a name");
-    }
-});
 
 // routing to other pages depending on game level selection by user 
 
@@ -47,7 +39,6 @@ $("img:eq(1)").on("click", function(){  // hard level page
 // adding audio to homepage 
 
 let sound = document.getElementById("main_theme"); 
-
 function playAudio() { 
   sound.play(); 
   sound.loop = true;
