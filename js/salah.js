@@ -3,10 +3,7 @@
 let PageEasyLevel; 
 let PageHardLevel; 
 let username, gamelevel; 
-
-let img1Id = $("img")[0].id; 
-let img2Id = $("img")[1].id;
-
+let maxScore = 0, playerObj; 
 
 // routing to other pages depending on game level selection by user 
 
@@ -16,10 +13,14 @@ $("#playEasyBtn").on("click", function(){ // easy level page
     if(PageEasyLevel && username){
         window.location.href="../pg2.html";
         // sending data stored from homepage to other pages using local storage !
-        gamelevel = img1Id;
-        localStorage.setItem("gamelevel", gamelevel);
-        localStorage.setItem("username", username);
-        //console.log("easy"); 
+        gamelevel = "easylevel";
+        console.log(gamelevel);
+        playerObj = {
+            "username": username,
+            "score": maxScore,
+            "level": gamelevel    
+        };
+        localStorage.setItem("id", JSON.stringify(playerObj));
     }
 }); 
 
@@ -29,10 +30,14 @@ $("#playHardBtn").on("click", function(){  // hard level page
     PageHardLevel = true;
     if(PageHardLevel && username){
         window.location.href="../pg2.html"; 
-        gamelevel = img2Id;
-        localStorage.setItem("gamelevel", gamelevel);
-        localStorage.setItem("username", username);
-        //console.log("hard");
+        gamelevel = "hardlevel";
+        console.log(gamelevel);
+        playerObj = {
+            "username": username,
+            "score": maxScore,
+            "level": gamelevel    
+        };
+        localStorage.setItem("id", JSON.stringify(playerObj));
     }
 });
 

@@ -10,10 +10,22 @@
         <img src="gallery/start.png" id="startbtn">
         
         <script src="js/jquery-3.2.1.js"></script>
-        <script src="js/salah.js"></script>
-    </body>
+        <script src="js/salah.js"></script> 
+        <script>
+            //$("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
 
-    <script>
-        $("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
-    </script>
+            let playerData = JSON.parse(localStorage.getItem("id"));
+            let playername = playerData["username"];
+            maxScore = playerData["score"];
+            let level = playerData["level"]; 
+            // some logic && code here  to update score during playing 
+            // e.g : score = "100"; 
+            $("span:eq(0)").text(playername);
+            $("span:eq(1)").text(maxScore);
+            $("p").text(level); 
+            
+            playerData = JSON.stringify(playerData);
+            localStorage.setItem("id", playerData);
+        </script>
+    </body>
 </html>
