@@ -9,6 +9,8 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    overflow: hidden;
+    -webkit-user-select: none;
 }
 #homepage_maincontainer{
     position: fixed;
@@ -86,6 +88,17 @@
     height: 100%;
     text-align: center;
     cursor: url("../gallery/arrow.png"), auto;
+    -webkit-user-select: none;
+}
+#playground{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+    /* background-color: black; */
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
 }
 #usernameplace{
     text-align: center;
@@ -105,3 +118,16 @@
     left: 40%;
     cursor: pointer;
 }
+.flipClass {
+    transform: rotateY(180deg);
+}
+  .Duck {
+    position: absolute;
+    left: -100px;
+    
+  }
+  .Duck img{
+    width: 100px;
+    height: 100px;
+  }
+

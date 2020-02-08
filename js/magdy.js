@@ -4,7 +4,7 @@ class Duck{      //class for creating ducks
         switch(this.duckColor)
         {
             case "red":
-                this.imageSrc="gallery/1.jpg" //"gallery/redDuck.png";
+                this.imageSrc="../gallery/duck.gif" //"gallery/redDuck.png";
                 break;
             case "black":
                 this.imageSrc="gallery/blackDuck.png";
@@ -39,7 +39,7 @@ class DiedDuck{  //class for creating died ducks
         switch(this.diedDuckColor)
         {
             case "red":
-                this.imageSrc="gallery/1.jpg";
+                this.imageSrc="../gallery/duck.gif";
                 break;
             case "black":
                 this.imageSrc="gallery/blackDuck.png";
@@ -60,3 +60,5 @@ class ExplodedBomb{
         let explodedBombObject=$(`<span class="Bomb"><img src="gallery/ExplodedBomb.png"></span>`);
     }
 }
+
+export {Duck};
