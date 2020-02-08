@@ -114,6 +114,18 @@
     font-weight: bolder;
     font-family: "Comic Sans MS", cursive, sans-serif; 
 }
+#scoreplace{
+    text-align: center;
+    position: absolute;
+    top: 85%;
+    left: 45%;
+    width: 100px;
+    height: 40px;
+    color: white;
+    font-size:  40px ;
+    font-weight: bolder;
+    font-family: "Comic Sans MS", cursive, sans-serif; 
+}
 #startbtn{
     position: absolute;
     top: 30%;
@@ -123,13 +135,21 @@
 .flipClass {
     transform: rotateY(180deg);
 }
-  .Duck {
+.Duck {
     position: absolute;
     left: -100px;
     
-  }
-  .Duck img{
+}
+.Duck img{
     width: 100px;
     height: 100px;
-  }
+}
+.diedDuck{
+    position: absolute;
+    left: -100px; 
+}
+.diedDuck img{
+    width: 80px;
+    height: 80px;
+}
 

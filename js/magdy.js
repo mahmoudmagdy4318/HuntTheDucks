@@ -34,12 +34,12 @@ class Bomb{   //class for creating the bomb
 }
 
 class DiedDuck{  //class for creating died ducks
-    constructor(duckColor){
+    constructor(duckColor,x,y){
         this.diedDuckColor=duckColor;
         switch(this.diedDuckColor)
         {
             case "red":
-                this.imageSrc="../gallery/duck.gif";
+                this.imageSrc="../gallery/duck-left.jpg";
                 break;
             case "black":
                 this.imageSrc="gallery/blackDuck.png";
@@ -48,10 +48,13 @@ class DiedDuck{  //class for creating died ducks
                 this.imageSrc="gallery/goldenDuck.png";
                 break;      
         }
+        this.left=x;
+        this.top=y;
     }
     
     createDiedDuck(){
         let diedDuck=$(`<span class="DiedDuck"><img src=${this.imageSrc}></span>`);
+        diedDuck.css({top:this.top , left:this.left});
         return diedDuck;
     }    
 }
@@ -80,6 +83,8 @@ function playAudio() {
   }  
 } 
 
+//sound and exit buutons
+
 $(".volume").on("click",playAudio);
 
 $(".exit").on("click",function(){
@@ -88,3 +93,22 @@ $(".exit").on("click",function(){
 $("#exit").on("click",function(){
     window.location.href="../pg1.html"; 
 });
+
+//shooting 
+
+let duckSound = document.getElementsByClassName("ducks")[0];
+let score=0;
+$("#playground").on("click",function(event){
+       if(event.target.src=="http://127.0.0.1:5500/gallery/duck.gif"){
+            duckSound.play();
+            let currentDuck=event.target;
+            let diedone=new DiedDuck("red",currentDuck.x-100,currentDuck.y).createDiedDuck();
+            currentDuck.remove();
+            $("#playground").append(diedone);
+            $(diedone).animate({top:"1200px"},2000);
+            score+=10;
+            $("#scoreplace").text(score);
+       }
+})
+
+export {Duck};
