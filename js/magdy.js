@@ -7,10 +7,10 @@ class Duck{      //class for creating ducks
                 this.imageSrc="../gallery/duck.gif" //"gallery/redDuck.png";
                 break;
             case "black":
-                this.imageSrc="gallery/blackDuck.png";
+                this.imageSrc="../gallery/blackDuck.gif";
                 break;
             case "gold":
-                this.imageSrc="gallery/goldenDuck.png";
+                this.imageSrc="../gallery/goldenDuck.gif";
                 break;      
         }
     }

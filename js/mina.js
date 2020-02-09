@@ -1,27 +1,84 @@
 import { Duck } from "./magdy.js";
 
-
-$("#startbtn").on("click", animateDuckRandomly);
-function animateDuckRandomly() {
+$("#startbtn").on("click", animateRedDuckRandomly);
+document.getElementById("startbtn").addEventListener("click", animateBlackDuckRandomly);
+document.getElementById("startbtn").addEventListener("click", animateGoldDuckRandomly);
+let randomPoint = [];
+for (let i = 0; i < 100; i++) {
+    randomPoint.push(Math.floor(Math.random() * 600));
+}
+function animateRedDuckRandomly() {
     $("#startbtn").css("display", "none");
-    let randomPoint = [];
-    for (let i = 0; i < 100; i++) {
-        randomPoint.push(Math.floor(Math.random() * 600));
-    }
+
     setInterval(function () {
         let newObject = new Duck("red");
-        let duckObject = newObject.createDuck();
-        $("#playground").append(duckObject);
-        $(duckObject).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 500);
-        // $(duckObject).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)] }, 5000);
-        $(duckObject).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 6000);
+        let redDuck = newObject.createDuck();
+        $("#playground").append(redDuck);
+        $(redDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 500);
+        // $(redDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)] }, 5000);
+        $(redDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 6000, function () {
+            $(redDuck).remove();
+        });
         let newObject2 = new Duck("red");
-        let duckObject2 = newObject2.createDuck();
-        $("#playground").append(duckObject2);
-        $(duckObject2).css("left","2500px");
-        $(duckObject2).addClass("flipClass");
-        $(duckObject2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 500);
-        $(duckObject2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 6000);
-        
+        let redDuck2 = newObject2.createDuck();
+        $("#playground").append(redDuck2);
+        $(redDuck2).css("left", "2500px");
+        $(redDuck2).addClass("flipClass");
+        $(redDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 500);
+        $(redDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 6000, function () {
+            $(redDuck2).remove();
+        });
+
+
+
     }, 2000);
+};
+
+
+function animateBlackDuckRandomly() {
+    setInterval(function () {
+        let newObject3 = new Duck("black");
+        let blackDuck = newObject3.createDuck();
+        $("#playground").append(blackDuck);
+        $(blackDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 500);
+        // $(blackDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)] }, 5000);
+        $(blackDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 6000, function () {
+            $(blackDuck).remove();
+        });
+        
+        
+        let newObject4 = new Duck("black");
+        let blackDuck2 = newObject4.createDuck();
+        $("#playground").append(blackDuck2);
+        $(blackDuck2).css("left", "2500px");
+        $(blackDuck2).addClass("flipClass");
+        $(blackDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 500);
+        $(blackDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 6000, function () {
+            $(blackDuck2).remove();
+        });
+    }, 5000);
+};
+
+
+
+function animateGoldDuckRandomly() {
+    setInterval(function () {
+        let newObject5 = new Duck("gold");
+        let goldDuck = newObject5.createDuck();
+        $("#playground").append(goldDuck);
+        $(goldDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 500);
+        // $(blackDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)] }, 5000);
+        $(goldDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 6000, function () {
+            $(goldDuck).remove();
+        });
+        let newObject4 = new Duck("gold");
+        let goldDuck2 = newObject4.createDuck();
+        $("#playground").append(goldDuck2);
+        $(goldDuck2).css("left", "2500px");
+        $(goldDuck2).addClass("flipClass");
+        $(goldDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 500);
+        $(goldDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 6000, function () {
+            $(goldDuck2).remove();
+        });
+    }, 10000);
 };
