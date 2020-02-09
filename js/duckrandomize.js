@@ -1,11 +1,5 @@
 $(document).ready(function () {
     animateDuckRandomly("#duck");
-    // setInterval(() => {
-    //     animateDuckRandomly("#duck");
-    // }, 7000);
-    // setInterval(() => {
-    //     animateDuckRandomly("#duck");
-    // }, 7000);
 
 });
 randomPoint = [10, 100, 200, 300, 400, 500, 510, 520, 530];
