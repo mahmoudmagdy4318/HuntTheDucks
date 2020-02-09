@@ -9,6 +9,8 @@ for (let i = 0; i < 100; i++) {
 }
 function animateRedDuckRandomly() {
 
+    console.log("hi");
+    
 //ducks sounds
     let ducksSound = document.getElementsByClassName("ducksBackground")[0];
     ducksSound.loop=true; 
@@ -52,7 +54,6 @@ function animateBlackDuckRandomly() {
         $(blackDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 6000, function () {
             $(blackDuck).remove();
         });
-        
         
         let newObject4 = new Duck("black");
         let blackDuck2 = newObject4.createDuck();
