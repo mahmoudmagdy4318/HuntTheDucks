@@ -10,9 +10,9 @@ for (let i = 0; i < 100; i++) {
 function animateRedDuckRandomly() {
 
 //ducks sounds
-    let ducksSound = document.getElementsByClassName("ducksBackground")[0];
-    ducksSound.loop=true; 
-    ducksSound.play();
+    // let ducksSound = document.getElementsByClassName("ducksBackground")[0];
+    // ducksSound.loop=true; 
+    // ducksSound.play();
 /////////////
 
     $("#startbtn").css("display", "none");
