@@ -9,12 +9,9 @@ $("#playEasyBtn").on("click", function(){ // easy level page
     PageEasyLevel = true; 
     username = $("#username").val();    
     if(PageEasyLevel && username){
-<<<<<<< HEAD
-=======
         window.location.href="../pg2.html";
-        $("#gamepage").css("background-image",`URL("../gallery/gamepage")`);
+        // $("#gamepage").css("background-image",`URL("../gallery/gamepage")`);
 
->>>>>>> f83fdb0b227e2e4c20818b82b448bc86e9b74b8e
         // sending data stored from homepage to other pages using local storage !
         gamelevel = "easylevel";
 
@@ -42,7 +39,6 @@ $("#playHardBtn").on("click", function(){  // hard level page
     username = $("#username").val();
     PageHardLevel = true;
     if(PageHardLevel && username){
-<<<<<<< HEAD
         gamelevel = "hardlevel";
         if((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]){
             maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];
@@ -58,19 +54,12 @@ $("#playHardBtn").on("click", function(){  // hard level page
         };
 
         localStorage.setItem(`id ${username} ${gamelevel}`, JSON.stringify(playerObj)); 
-=======
-        window.location.href="../pg2.html"; 
-        $("#gamepage").addClass("darkmode");
-        gamelevel = img2Id;
-        localStorage.setItem("gamelevel", gamelevel);
->>>>>>> f83fdb0b227e2e4c20818b82b448bc86e9b74b8e
         localStorage.setItem("username", username);
         localStorage.setItem("level", gamelevel); 
         window.location.href = "../pg2.html"; 
     }
 });
 
-<<<<<<< HEAD
 
 // adding audio to homepage
 let sound = document.getElementsByClassName("main_theme")[0]; 
@@ -98,8 +87,5 @@ $(".exit").on("click",function(){
 $("#exit").on("click",function(){
     window.location.href="../pg1.html"; 
 });
-=======
-
->>>>>>> f83fdb0b227e2e4c20818b82b448bc86e9b74b8e
 
 
