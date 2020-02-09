@@ -8,6 +8,13 @@ for (let i = 0; i < 100; i++) {
     randomPoint.push(Math.floor(Math.random() * 600));
 }
 function animateRedDuckRandomly() {
+
+//ducks sounds
+    let ducksSound = document.getElementsByClassName("ducksBackground")[0];
+    ducksSound.loop=true; 
+    ducksSound.play();
+/////////////
+
     $("#startbtn").css("display", "none");
 
     setInterval(function () {
