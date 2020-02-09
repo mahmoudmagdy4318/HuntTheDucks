@@ -1,26 +1,33 @@
 // flags to handle routing between pages of game 
-
 let PageEasyLevel; 
 let PageHardLevel; 
 let username, gamelevel; 
-let maxScore = 0, playerObj; 
+let maxScore, playerObj; 
 
 // routing to other pages depending on game level selection by user 
-
 $("#playEasyBtn").on("click", function(){ // easy level page 
-    PageEasyLevel = true;
-    username = $("#username").val();
+    PageEasyLevel = true; 
+    username = $("#username").val();    
     if(PageEasyLevel && username){
-        window.location.href="../pg2.html";
         // sending data stored from homepage to other pages using local storage !
         gamelevel = "easylevel";
-        console.log(gamelevel);
+
+        if((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]){
+            maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];
+         }
+         else{
+            maxScore = 0;
+         }
+
         playerObj = {
-            "username": username,
+         //   "username": username,
             "score": maxScore,
             "level": gamelevel    
         };
-        localStorage.setItem("id", JSON.stringify(playerObj));
+        localStorage.setItem(`id ${username} ${gamelevel}`, JSON.stringify(playerObj)); 
+        localStorage.setItem("username", username);
+        localStorage.setItem("level", gamelevel); 
+        window.location.href="../pg2.html";
     }
 }); 
 
@@ -29,20 +36,29 @@ $("#playHardBtn").on("click", function(){  // hard level page
     username = $("#username").val();
     PageHardLevel = true;
     if(PageHardLevel && username){
-        window.location.href="../pg2.html"; 
         gamelevel = "hardlevel";
-        console.log(gamelevel);
+        if((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]){
+            maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];
+        }
+        else{
+            maxScore = 0;
+        }
+
         playerObj = {
-            "username": username,
+           // "username": username,
             "score": maxScore,
             "level": gamelevel    
         };
-        localStorage.setItem("id", JSON.stringify(playerObj));
+
+        localStorage.setItem(`id ${username} ${gamelevel}`, JSON.stringify(playerObj)); 
+        localStorage.setItem("username", username);
+        localStorage.setItem("level", gamelevel); 
+        window.location.href = "../pg2.html"; 
     }
 });
 
-// adding audio to homepage 
 
+// adding audio to homepage
 let sound = document.getElementsByClassName("main_theme")[0]; 
 sound.loop=false;
 function playAudio() { 
@@ -58,6 +74,8 @@ function playAudio() {
   }  
 } 
 
+
+// audio and exit page handling 
 $(".volume").on("click",playAudio);
 
 $(".exit").on("click",function(){

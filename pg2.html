@@ -3,29 +3,41 @@
         <link rel="stylesheet" href="styles/gameStyles.css">
     </head>
     <body id="gamepage">
+        <div>welcome <span></span></div> 
+        <div> your max score is: <span></span></div>
         <img src="gallery/exit.png" id="exit">
         <img src="gallery/sound.png" class="volume">
         <audio class= "main_theme" src="main_theme.mp3"> </audio>
         <div id="usernameplace"></div>
-        <img src="gallery/start.png" id="startbtn">
+        <img src="gallery/start.png" id="startbtn"> 
         
         <script src="js/jquery-3.2.1.js"></script>
         <script src="js/salah.js"></script> 
         <script>
             //$("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
+            let playername = localStorage.getItem("username");
+            let level = localStorage.getItem("level");
+            let playerObj1;
+            let maxScore1 = (JSON.parse(localStorage.getItem(`id ${playername} ${level}`)))["score"];
 
-            let playerData = JSON.parse(localStorage.getItem("id"));
-            let playername = playerData["username"];
-            maxScore = playerData["score"];
-            let level = playerData["level"]; 
             // some logic && code here  to update score during playing 
             // e.g : score = "100"; 
-            $("span:eq(0)").text(playername);
-            $("span:eq(1)").text(maxScore);
-            $("p").text(level); 
             
-            playerData = JSON.stringify(playerData);
-            localStorage.setItem("id", playerData);
+            $("span:eq(0)").text(playername);
+            $("span:eq(1)").text(maxScore1);
+            $("p").text(level); 
+
+            document.body.addEventListener("click", function(){
+                maxScore1++;
+                $("span:eq(1)").text(maxScore1);
+                playerObj1 = {
+                    "score": maxScore1,
+                    "level": level    
+                };
+                localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObj1)); 
+            });
+            
         </script>
     </body>
 </html>
+
