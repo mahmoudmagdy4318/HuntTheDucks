@@ -15,6 +15,8 @@ $("#playEasyBtn").on("click", function(){ // easy level page
     username = $("#username").val();
     if(PageEasyLevel && username){
         window.location.href="../pg2.html";
+        $("#gamepage").css("background-image",`URL("../gallery/gamepage")`);
+
         // sending data stored from homepage to other pages using local storage !
         gamelevel = img1Id;
         localStorage.setItem("gamelevel", gamelevel);
@@ -29,6 +31,7 @@ $("#playHardBtn").on("click", function(){  // hard level page
     PageHardLevel = true;
     if(PageHardLevel && username){
         window.location.href="../pg2.html"; 
+        $("#gamepage").addClass("darkmode");
         gamelevel = img2Id;
         localStorage.setItem("gamelevel", gamelevel);
         localStorage.setItem("username", username);

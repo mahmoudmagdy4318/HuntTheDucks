@@ -15,6 +15,11 @@ let rightToLeft = false;
 
 
 function animateDuckRandomly() {
+//ducks sounds
+let ducksSound = document.getElementsByClassName("ducksBackground")[0];
+ducksSound.loop=true; 
+ducksSound.play();
+/////////////
     $("#startbtn").css("display","none");
         setInterval(function () {
         let randomPoint = [];
@@ -34,7 +39,7 @@ function animateDuckRandomly() {
         // $(duckObject2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)]}, 5000);
         // $(duckObject).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-100" }, 6000);
 
-    }, 2000);
+    }, 5000);
 
     //  } else {
         //     $(duckObject).addClass("flipClass");
