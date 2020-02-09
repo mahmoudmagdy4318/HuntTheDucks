@@ -1,73 +1,32 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="styles/gameStyles.css">
-    </head>
-    <body id="gamepage">
-        <div>welcome <span></span></div> 
-        <div> your max score is: <span></span></div>
-        <img src="gallery/exit.png" id="exit">
-        <img src="gallery/sound.png" class="volume">
-<<<<<<< HEAD
-        <audio class= "main_theme" src="main_theme.mp3"> </audio>
-        <div id="usernameplace"></div>
-        <img src="gallery/start.png" id="startbtn"> 
-        
-        <script src="js/jquery-3.2.1.js"></script>
-        <script src="js/salah.js"></script> 
-        <script>
-            //$("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
-            let playername = localStorage.getItem("username");
-            let level = localStorage.getItem("level");
-            let playerObj1;
-            let maxScore1 = (JSON.parse(localStorage.getItem(`id ${playername} ${level}`)))["score"];
 
-            // some logic && code here  to update score during playing 
-            // e.g : score = "100"; 
-            
-            $("span:eq(0)").text(playername);
-            $("span:eq(1)").text(maxScore1);
-            $("p").text(level); 
+<head>
+    <link rel="stylesheet" href="styles/gameStyles.css">
+</head>
 
-            document.body.addEventListener("click", function(){
-                maxScore1++;
-                $("span:eq(1)").text(maxScore1);
-                playerObj1 = {
-                    "score": maxScore1,
-                    "level": level    
-                };
-                localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObj1)); 
-            });
-            
-        </script>
-=======
-        <audio class= "main_theme" src="sounds/main_theme.mp3"> </audio>
-        <audio class= "ducks" src="sounds/duck1.mp3"> </audio>
-        <audio class= "ducksBackground" src="sounds/ducks.mp3"> </audio>
-        <div id="playground"></div>
-        <span id="usernameplace"></span>
-        <span id="scoreplace"></span>
-        <img src="gallery/start.png" id="startbtn">
-        <span id="highscore">High Score</span>
-        <span id="HighScoreRes"></span>
+<body id="gamepage">
+    <img src="gallery/exit.png" id="exit">
+    <img src="gallery/sound.png" class="volume">
+    <div id="usernameplace"></div>
+    <img src="gallery/start.png" id="startbtn">
+    <audio class="main_theme" src="sounds/main_theme.mp3"> </audio>
+    <audio class="ducks" src="sounds/duck1.mp3"> </audio>
+    <audio class="ducksBackground" src="sounds/ducks.mp3"> </audio>
+    <div id="playground"></div>
+    <span id="scoreplace"></span>
+    <span id="highscore">High Score</span>
+    <span id="HighScoreRes"></span>
 
-        <!-- <img src="gallery/EasyMerryAnteater-size_restricted.gif" id="duck"> -->
+    <!-- <img src="gallery/EasyMerryAnteater-size_restricted.gif" id="duck"> -->
 
-        <!-- game scripts -->
+    <!-- game scripts -->
 
-        <script src="js/jquery-3.2.1.js"></script>
-        <script type="module" src="js/salah.js"></script>
-        <script type="module" src="js/magdy.js"></script>
-        <script type="module" src="js/mina.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script type="module" src="js/salah.js"></script>
+    <script type="module" src="js/magdy.js"></script>
+    <script type="module" src="js/mina.js"></script>
 
 
->>>>>>> f83fdb0b227e2e4c20818b82b448bc86e9b74b8e
-    </body>
+</body>
+
 </html>
-
-<<<<<<< HEAD
-=======
-    <script>
-        // $("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
-    </script>
-</html>
->>>>>>> f83fdb0b227e2e4c20818b82b448bc86e9b74b8e
