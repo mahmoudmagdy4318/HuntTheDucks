@@ -34,9 +34,11 @@ $("#playEasyBtn").on("click", function() { // easy level page
 
 
 $("#playHardBtn").on("click", function() { // hard level page 
+    window.location.href = "../pg2.html";
     username = $("#username").val();
     PageHardLevel = true;
     if(PageHardLevel && username){
+        console.log("hi");
         gamelevel = "hardlevel";
         if ((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]) {
             maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];
@@ -58,31 +60,7 @@ $("#playHardBtn").on("click", function() { // hard level page
 });
 
 
-// adding audio to homepage
-let sound = document.getElementsByClassName("main_theme")[0];
-sound.loop = false;
 
-function playAudio() {
-    if (sound.loop != true) {
-        sound.play();
-        $(".volume").attr("src", "gallery/soundoff.png");
-        sound.loop = true;
-    } else {
-        sound.pause();
-        $(".volume").attr("src", "gallery/sound.png");
-        sound.loop = false;
-    }
-}
-
-// audio and exit page handling 
-$(".volume").on("click", playAudio);
-
-$(".exit").on("click", function() {
-    window.close();
-})
-$("#exit").on("click", function() {
-    window.location.href = "../pg1.html";
-});
 
 //$("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase());
 // let playername = localStorage.getItem("username");

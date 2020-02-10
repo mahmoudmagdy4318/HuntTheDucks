@@ -3,7 +3,7 @@
     margin: 0;
 }
 #homepage{
-    position: fixed;
+    position: absolute;
     background-image: url("../gallery/home.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -98,7 +98,7 @@
 
 #gamepage{
     position: fixed;
-    background-image:URL("../gallery/dark_mode.jpg");
+    background-image:URL("../gallery/gamepage.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
@@ -108,7 +108,7 @@
     -webkit-user-select: none;
 }
 #playground{
-    position: relative;
+    position: absolute;
     left: 5%;
     width: 90%;
     height: 90%;
@@ -120,6 +120,7 @@
     background-image:URL("../gallery/dark_mode.jpg");
 }
 #usernameplace{
+    display: inline-block;
     text-align: center;
     position: absolute;
     top: 88%;
@@ -130,8 +131,10 @@
     font-size:  40px ;
     font-weight: bolder;
     font-family: "Comic Sans MS", cursive, sans-serif; 
+    background-color: black;
 }
 #scoreplace{
+    display: inline-block;
     text-align: center;
     position: absolute;
     top: 85%;
@@ -144,9 +147,9 @@
     font-family: "Comic Sans MS", cursive, sans-serif; 
 }
 #startbtn{
-    position: absolute;
-    top: 30%;
-    left: 40%;
+    display: inline-block;
+    margin-top: 200px;
+    margin-left: 75px;
     cursor: pointer;
 }
 .flipClass {
