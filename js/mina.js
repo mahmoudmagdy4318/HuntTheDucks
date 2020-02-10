@@ -12,9 +12,9 @@ function animateRedDuckRandomly() {
     console.log("hi");
     
 //ducks sounds
-    let ducksSound = document.getElementsByClassName("ducksBackground")[0];
-    ducksSound.loop=true; 
-    ducksSound.play();
+    // let ducksSound = document.getElementsByClassName("ducksBackground")[0];
+    // ducksSound.loop=true; 
+    // ducksSound.play();
 /////////////
 
     $("#startbtn").css("display", "none");
