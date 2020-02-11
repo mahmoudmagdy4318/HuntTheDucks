@@ -29,10 +29,12 @@ $("#playEasyBtn").on("click", function() { // easy level page
 
 
 $("#playHardBtn").on("click", function() { // hard level page 
+    // window.location.href = "../pg2.html";
     username = $("#username").val();
     console.log("inside");
     PageHardLevel = true;
-    if (PageHardLevel && username) {
+    if(PageHardLevel && username){
+
         gamelevel = "hardlevel";
         playerObj = {
             "score": maxScore,
@@ -41,6 +43,18 @@ $("#playHardBtn").on("click", function() { // hard level page
         localStorage.setItem(`id ${username} ${gamelevel}`, JSON.stringify(playerObj));
         localStorage.setItem("username", username);
         localStorage.setItem("level", gamelevel);
+        // window.location.href = "../pg2.html";
+        if ((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]) {
+            maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];
+            console.log("hi");
+            
+        } else {
+            maxScore = 0;
+        }
+
+        
+
+        
 
         // if ((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]) {
         //     maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];

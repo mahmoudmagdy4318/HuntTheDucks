@@ -59,8 +59,14 @@ class DiedDuck { //class for creating died ducks
 }
 
 class ExplodedBomb {
+    constructor(x,y){
+        this.left=x;
+        this.top=y;
+    }
     createExplodedBomb() {
-        let explodedBombObject = $(`<span class="Bomb"><img src="gallery/ExplodedBomb.png"></span>`);
+        let explodedBombObject = $(`<span><img src="gallery/ExplodedBomb.png"></span>`);
+        explodedBombObject.css({ top: this.top, left: this.left });
+        return explodedBombObject;
     }
 }
 
@@ -108,6 +114,35 @@ $("#playground").on("click", function(event) {
         score += 10;
         $("#scoreplace").text(score);
     }
+    if(event.target.src=="http://127.0.0.1:5500/gallery/goldenduck.gif"){
+        duckSound.play();
+        let currentDuck = event.target;
+        let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
+        currentDuck.remove();
+        $("#playground").append(diedone);
+        $(diedone).animate({ top: "1200px" }, 2000);
+        score += 50;
+        $("#scoreplace").text(score);
+    }
+    if(event.target.src=="http://127.0.0.1:5500/gallery/blackDuck.gif"){
+        duckSound.play();
+        let currentDuck = event.target;
+        let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
+        currentDuck.remove();
+        $("#playground").append(diedone);
+        $(diedone).animate({ top: "1200px" }, 2000);
+        score -= 50;
+        $("#scoreplace").text(score);
+    }
+    if(event.target.src=="http://127.0.0.1:5500/gallery/source.gif"){
+        let bomb = event.target;
+        let explodedbomb=new ExplodedBomb(bomb.x,bomb.y).createExplodedBomb();
+        $("#playground").append(explodedbomb);
+        bomb.remove();
+        $(explodedbomb).fadeOut(2000);
+        $("#playground img").click();        
+    }
+     
 })
 
 export { Duck, Bomb };
