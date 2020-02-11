@@ -221,8 +221,20 @@
     position: absolute;
     top: -100px;
 }
-
 .Bomb img {
     width: 100px;
     height: 100px;
+}
+/* #modal{
+    display: none;
+} */
+#modalcontainer{
+    background-image: url(../gallery/pop-up.png);
+    width: 739px;
+    height: 415px;
+    margin-left: -120px;
+}
+#playagain{
+    color: azure;
+    margin-top: 30%;
 }

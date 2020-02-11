@@ -1,7 +1,10 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/gameStyles.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
 </head>
 
 <body id="gamepage">
@@ -9,6 +12,28 @@
     <img src="gallery/sound.png" class="volume">
     <div id="myProgress">
         <div id="myBar"></div>
+    </div>
+    <div class="container" >
+        <button id="modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content" id="modalcontainer">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Game End</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 id="playagain">Do You Want To Play Again?</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"  class="btn btn-default" data-dismiss="modal" id="">Play Again</button>
+                        <button type="button"  class="btn btn-default" data-dismiss="modal">Home</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <div id="usernameplace"></div>
     <img src="gallery/start.png" id="startbtn">
@@ -23,8 +48,8 @@
 
     <!-- <img src="gallery/EasyMerryAnteater-size_restricted.gif" id="duck"> -->
     <!-- game scripts -->
-
     <script src="js/jquery-3.2.1.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script type="module" src="js/salah.js"></script>
     <script type="module" src="js/magdy.js"></script>
     <script type="module" src="js/mina.js"></script>
