@@ -104,8 +104,8 @@
 #HighScoreRes {
     position: absolute;
     top: 3%;
-    left: 75%;
-    color: white;
+    left: 80%;
+    color: rgb(173, 78, 0);
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 40px;
 }
@@ -126,9 +126,9 @@
     position: absolute;
     left: 5%;
     width: 90%;
-    height: 90%;
+    height: 77%;
     overflow: hidden;
-    border-bottom-right-radius: 20%;
+    border-bottom-right-radius: 25%;
     border-bottom-left-radius: 20%;
 }
 
@@ -196,7 +196,7 @@
 }
 #myprogress {
     border-radius: 9999em;
-    width: 35%;
+    width: 30%;
     height: 30px;
     margin-left: 120px;
     margin-top: 5px;
