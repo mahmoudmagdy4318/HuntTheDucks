@@ -124,7 +124,7 @@ $("#playground").on("click", function(event) {
         score += 50;
         $("#scoreplace").text(score);
     }
-    if(event.target.src=="http://127.0.0.1:5500/gallery/blackduck.gif"){
+    if(event.target.src=="http://127.0.0.1:5500/gallery/blackDuck.gif"){
         duckSound.play();
         let currentDuck = event.target;
         let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
@@ -142,8 +142,7 @@ $("#playground").on("click", function(event) {
         $(explodedbomb).fadeOut(2000);
         $("#playground img").click();        
     }
-
-    
+     
 })
 
 export { Duck, Bomb };
