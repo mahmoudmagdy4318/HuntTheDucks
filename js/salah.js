@@ -52,10 +52,6 @@ $("#playHardBtn").on("click", function() { // hard level page
             maxScore = 0;
         }
 
-        
-
-        
-
         // if ((JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["level"]) {
         //     maxScore = (JSON.parse(localStorage.getItem(`id ${username} ${gamelevel}`)))["score"];
         // } else {

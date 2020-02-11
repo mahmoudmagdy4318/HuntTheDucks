@@ -96,7 +96,7 @@ function animateGoldDuckRandomly() {
         let goldDuck = newObject5.createDuck();
         $("#playground").append(goldDuck);
         $(goldDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-400" }, 500);
-        $(kDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)] }, 5000);
+        $(goldDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: randomPoint[Math.floor(Math.random() * 100)] }, 5000);
         $(goldDuck).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "2500px" }, 6000, function () {
             $(goldDuck).remove();
         });
