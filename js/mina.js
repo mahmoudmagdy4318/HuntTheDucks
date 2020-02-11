@@ -130,6 +130,7 @@ function move() {
             // elem.innerHTML = width + " S";
         }
     }
+};    
 function createBombRandomly() {
     setInterval(function() {
         console.log("there");
@@ -143,4 +144,4 @@ function createBombRandomly() {
             $(createdBomb).remove();
         });
     }, 10000);
-}
+};
