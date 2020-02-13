@@ -149,7 +149,7 @@ $("#playground").on("click", function(event) {
     else if(event.target.src=="http://127.0.0.1:5500/gallery/blackDuck.gif"){
         duckSound.play();
         let currentDuck = event.target;
-        let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
+        let diedone = new DiedDuck("black", currentDuck.x - 100, currentDuck.y).createDiedDuck();
         currentDuck.remove();
         $("#playground").append(diedone);
         $(diedone).animate({ top: "1200px" }, 2000);
