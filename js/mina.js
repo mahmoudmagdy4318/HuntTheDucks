@@ -43,6 +43,7 @@ $("#startbtn").on("click", function() {
         changeBackground();
         changeCursor();
     }
+    updateScoreColor();
 });
 
 function changeBackground() {
@@ -203,29 +204,36 @@ function createBombRandomly() {
 };
 
 
+
+
 let TO, playerObjj;
+
+
+document.getElementById("modal").addEventListener("click",updateHighScore);
+function updateHighScore(){
+    if (parseInt(JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"]) < parseInt($("#scoreplace").text())) {
+        console.log("inside if parse");
+        playerObjj = {
+            "scores": parseInt($("#scoreplace").text()),
+            "level": level
+        }
+        localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObjj));
+    } else {
+        playerObjj = {
+            "scores": parseInt($("#HighScoreRes").text()),
+            "level": level
+        }
+        localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObjj));
+    }
+    console.log(localStorage.getItem(`id ${playername} ${level}`));
+
+    scores = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
+    $("#HighScoreRes").text(scores);
+}
 
 function showModal() {
     TO=setTimeout(() => {
         document.getElementById("modal").click();
-        if (parseInt($("#HighScoreRes").text()) < parseInt($("#scoreplace").text())) {
-            console.log("inside if parse");
-            playerObjj = {
-                "scores": parseInt($("#scoreplace").text()),
-                "level": level
-            }
-            localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObjj));
-        } else {
-            playerObjj = {
-                "scores": parseInt($("#HighScoreRes").text()),
-                "level": level
-            }
-            localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObjj));
-        }
-        console.log(localStorage.getItem(`id ${playername} ${level}`));
-
-        let scores = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
-        $("#HighScoreRes").text(scores);
 
         gameEnd = true;
         $("#playground span").remove();
@@ -247,3 +255,14 @@ $(".modal-footer :first").on("click", function() {
 $(".modal-footer :last").on("click", function() {
     window.location.href = "../pg1.html";
 });
+
+function updateScoreColor(){
+    setInterval(function(){
+        if (parseInt($("#HighScoreRes").text()) < parseInt($("#scoreplace").text())) {
+            $("#scoreplace").css("color","rgb(155,235,26)");
+            $("#HighScoreRes").text($("#scoreplace").text());
+            $("#HighScoreRes").css("color","rgb(155,235,26)");
+        }
+    },500)
+    
+}

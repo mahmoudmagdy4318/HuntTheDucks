@@ -183,4 +183,6 @@ function animateDog(){
     $(dog).animate({top:"580px"},1000);
 }
 
+
+
 export { Duck, Bomb, gameState };
