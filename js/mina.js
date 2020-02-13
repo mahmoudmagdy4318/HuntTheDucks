@@ -8,9 +8,7 @@ let username = localStorage.getItem("username");
 let scoresArr2 = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
 $("#HighScoreRes").text(scoresArr2);
 $("#usernameplace").text(username.substring(0, 7).toUpperCase());
-///// 
-//$("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase()); 
-/////////////////////////
+
 
 let redInterval, goldInterval, blackInterval;
 let speed1, speed2, speed3;
@@ -93,6 +91,8 @@ function animateRedDuckRandomly() {
             $(redDuck2).animate({ top: randomPoint[Math.floor(Math.random() * 100)], left: "-400" }, speed3, function() {
                 $(redDuck2).remove();
             });
+            console.log(gameEnd);
+            
         } else {
             stopTimeout();
         }
@@ -198,7 +198,7 @@ function createBombRandomly() {
                     $(createdBomb).remove();
                 });
             }
-        }, 10000);
+        }, 11000);
     }
 };
 
@@ -206,7 +206,7 @@ function createBombRandomly() {
 let TO, playerObjj;
 
 function showModal() {
-    setTimeout(() => {
+    TO=setTimeout(() => {
         document.getElementById("modal").click();
         if (parseInt($("#HighScoreRes").text()) < parseInt($("#scoreplace").text())) {
             console.log("inside if parse");
@@ -224,7 +224,7 @@ function showModal() {
         }
         console.log(localStorage.getItem(`id ${playername} ${level}`));
 
-        scores = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
+        let scores = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
         $("#HighScoreRes").text(scores);
 
         gameEnd = true;
@@ -234,15 +234,6 @@ function showModal() {
 }
 
 
-
-// function showModal() {
-//     TO=setTimeout(() => {
-//         document.getElementById("modal").click();
-//         gameEnd=true;
-//         $("#playground span").remove();
-//         document.getElementsByClassName("ducksBackground")[0].pause();
-//     }, 60000);
-// }
 
 function stopTimeout() {
     clearTimeout(TO);
