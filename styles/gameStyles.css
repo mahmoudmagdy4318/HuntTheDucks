@@ -120,13 +120,14 @@
     text-align: center;
     cursor: url("../gallery/sniper.png"), auto;
     -webkit-user-select: none;
+    transition: all 60s;
 }
 
 #playground {
     position: absolute;
     left: 5%;
     width: 90%;
-    height: 77%;
+    height: 76%;
     overflow: hidden;
     border-bottom-right-radius: 25%;
     border-bottom-left-radius: 20%;
@@ -164,6 +165,22 @@
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
+#ducksCount{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 88%;
+    left: 17%;
+    width: 80px;
+    height: 80px;
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
 #startbtn {
     display: inline-block;
     margin-top: 200px;
@@ -194,10 +211,19 @@
     width: 80px;
     height: 80px;
 }
+.Dog{
+    position: absolute;
+    top: 580px;
+    left: 550px;
+}
+.Dog img{
+    width: 180px;
+    height: 180px;
+}
 #myprogress {
     border-radius: 9999em;
-    width: 30%;
-    height: 30px;
+    width: 319px;
+    height: 60px;
     margin-left: 120px;
     margin-top: 5px;
     background-image: url(../gallery/progress.png);
@@ -212,9 +238,10 @@
     line-height: 30px;
     color: white;
     border-radius: 9999em;
-    height: 10px;
+    height: 20px;
     margin: 17px;
     margin-left:7px;
+    transition: all 2s;
 }
 
 .Bomb {
@@ -237,4 +264,13 @@
 #playagain{
     color: azure;
     margin-top: 30%;
+}
+#modal{
+    display: none;
+}
+.no-border{
+    border:none;
+}
+.modal-title,#playagain,.btn{
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }

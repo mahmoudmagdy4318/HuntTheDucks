@@ -21,7 +21,7 @@ class Duck { //class for creating ducks
 
 class Dog { //class for creating the dog
     createDog() {
-        let dogObject = $(`<span class="Dog"><img src="gallery/dog.png"></span>`);
+        let dogObject = $(`<span class="Dog"><img src="../gallery/dog.png"></span>`);
         return dogObject;
     }
 }
@@ -101,20 +101,34 @@ $("#exit").on("click", function() {
 //shooting 
 
 let duckSound = document.getElementsByClassName("ducks")[0];
+let bombSound = document.getElementsByClassName("bombs")[0];
 let score = 0;
+let ducksCount=0;
+let gameState=false;
 $("#playground").on("click", function(event) {
-    if (event.target.src == "http://127.0.0.1:5500/gallery/duck.gif") {
+    if (event.target.src == "http://127.0.0.1:5500/gallery/duck.gif") {        
         duckSound.play();
+        animateDog();
         let currentDuck = event.target;
         let diedone = new DiedDuck("red", currentDuck.x - 100, currentDuck.y).createDiedDuck();
         currentDuck.remove();
         $("#playground").append(diedone);
         $(diedone).animate({ top: "1200px" }, 2000);
         score += 10;
+        ducksCount++;
         $("#scoreplace").text(score);
+        $("#ducksCount").text(ducksCount);
+        if(ducksCount==20){
+            document.getElementById("modal").click();
+            gameState=true;
+            $("#playground span").remove();
+            document.getElementsByClassName("ducksBackground")[0].pause();
+            $(".modal-title").text("GREAT!");
+        }
     }
     else if(event.target.src=="http://127.0.0.1:5500/gallery/goldenduck.gif"){
         duckSound.play();
+        animateDog();
         let currentDuck = event.target;
         let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
         currentDuck.remove();
@@ -122,6 +136,15 @@ $("#playground").on("click", function(event) {
         $(diedone).animate({ top: "1200px" }, 2000);
         score += 50;
         $("#scoreplace").text(score);
+        ducksCount++;
+        $("#ducksCount").text(ducksCount);
+        if(ducksCount==20){
+            document.getElementById("modal").click();
+            gameState=true;
+            $("#playground span").remove();
+            document.getElementsByClassName("ducksBackground")[0].pause();
+            $(".modal-title").text("GREAT!");
+        }
     }
     else if(event.target.src=="http://127.0.0.1:5500/gallery/blackDuck.gif"){
         duckSound.play();
@@ -132,16 +155,32 @@ $("#playground").on("click", function(event) {
         $(diedone).animate({ top: "1200px" }, 2000);
         score -= 20;
         $("#scoreplace").text(score);
+        ducksCount--;
+        $("#ducksCount").text(ducksCount);
     }
     else if(event.target.src=="http://127.0.0.1:5500/gallery/source.gif"){
         let bomb = event.target;
+        bombSound.play();
         let explodedbomb=new ExplodedBomb(bomb.x,bomb.y).createExplodedBomb();
         $("#playground").append(explodedbomb);
         bomb.remove();
         $(explodedbomb).fadeOut(2000);
-        $("#playground img").click();        
+        $("#playground img").click();
+        if(ducksCount==20){
+            document.getElementById("modal").click();
+            gameState=true;
+            $("#playground span").remove();
+            document.getElementsByClassName("ducksBackground")[0].pause();
+            $(".modal-title").text("GREAT!");
+        }        
     }
      
 })
+let dog= new Dog().createDog();
+$("#playground").append(dog);
+function animateDog(){
+    $(dog).animate({top:"420px"},1000);
+    $(dog).animate({top:"580px"},1000);
+}
 
-export { Duck, Bomb };
+export { Duck, Bomb, gameState };

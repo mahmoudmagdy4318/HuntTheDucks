@@ -9,7 +9,6 @@
 
 <body id="gamepage">
     <img src="gallery/exit.png" id="exit">
-    <img src="gallery/sound.png" class="volume">
     <div id="myProgress">
         <div id="myBar"></div>
     </div>
@@ -18,16 +17,16 @@
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" id="modalcontainer">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Game End</h4>
+                    <div class="modal-header border-0">
+                        <h4 class="modal-title text-danger" >Game Over!</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body text-light border-0">
                         <h3 id="playagain">Do You Want To Play Again?</h3>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button"  class="btn btn-default" data-dismiss="modal" id="">Play Again</button>
-                        <button type="button"  class="btn btn-default" data-dismiss="modal">Home</button>
+                    <div class="modal-footer float-none border-0">
+                        <button type="button"  class="btn btn-info " data-dismiss="modal" >Play Again</button>
+                        <button type="button"  class="btn btn-danger " data-dismiss="modal">Home</button>
                     </div>
                 </div>
 
@@ -39,15 +38,14 @@
     <img src="gallery/start.png" id="startbtn">
     <audio class="main_theme" src="sounds/main_theme.mp3"> </audio>
     <audio class="ducks" src="sounds/duck1.mp3"> </audio>
+    <audio class="bombs" src="sounds/bombs.mp3"> </audio>
     <audio class="ducksBackground" src="sounds/ducks.mp3"> </audio>
     <div id="playground"></div>
     <span id="scoreplace"></span>
-
+    <span id="ducksCount"></span>
     <span id="highscore">High Score</span>
     <span id="HighScoreRes">0</span>
 
-    <!-- <img src="gallery/EasyMerryAnteater-size_restricted.gif" id="duck"> -->
-    <!-- game scripts -->
     <script src="js/jquery-3.2.1.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script type="module" src="js/salah.js"></script>
