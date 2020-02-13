@@ -258,11 +258,11 @@ $(".modal-footer :last").on("click", function() {
 
 function updateScoreColor(){
     setInterval(function(){
-        if (parseInt($("#HighScoreRes").text()) < parseInt($("#scoreplace").text())) {
+        if (parseInt(JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"]) < parseInt($("#scoreplace").text())) {
             $("#scoreplace").css("color","rgb(155,235,26)");
-            $("#HighScoreRes").text($("#scoreplace").text());
             $("#HighScoreRes").css("color","rgb(155,235,26)");
+            $("#HighScoreRes").text($("#scoreplace").text());
         }
-    },500)
+    },1000)
     
 }
