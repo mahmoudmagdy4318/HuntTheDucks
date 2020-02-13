@@ -233,8 +233,8 @@ function updateHighScore(){
 
 function showModal() {
     TO=setTimeout(() => {
+        $("#gamepage").css("cursor","auto");
         document.getElementById("modal").click();
-
         gameEnd = true;
         $("#playground span").remove();
         document.getElementsByClassName("ducksBackground")[0].pause();

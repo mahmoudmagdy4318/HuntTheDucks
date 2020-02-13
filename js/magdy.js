@@ -38,13 +38,13 @@ class DiedDuck { //class for creating died ducks
         this.diedDuckColor = duckColor;
         switch (this.diedDuckColor) {
             case "red":
-                this.imageSrc = "../gallery/duck-left.jpg";
+                this.imageSrc = "../gallery/duck-left.png";
                 break;
             case "black":
-                this.imageSrc = "gallery/blackDuck.png";
+                this.imageSrc = "../gallery/blackDuck.png";
                 break;
             case "gold":
-                this.imageSrc = "gallery/goldenDuck.png";
+                this.imageSrc = "../gallery/goldenDuck.png";
                 break;
         }
         this.left = x;
