@@ -113,7 +113,9 @@ $("#playground").on("click", function(event) {
         let diedone = new DiedDuck("red", currentDuck.x - 100, currentDuck.y).createDiedDuck();
         currentDuck.remove();
         $("#playground").append(diedone);
-        $(diedone).animate({ top: "1200px" }, 2000);
+        $(diedone).animate({ top: "1200px" }, 2000,function() {
+            $(diedone).remove();
+        });
         score += 10;
         ducksCount++;
         $("#scoreplace").text(score);
@@ -133,7 +135,9 @@ $("#playground").on("click", function(event) {
         let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
         currentDuck.remove();
         $("#playground").append(diedone);
-        $(diedone).animate({ top: "1200px" }, 2000);
+        $(diedone).animate({ top: "1200px" }, 2000,function() {
+            $(diedone).remove();
+        });
         score += 50;
         $("#scoreplace").text(score);
         ducksCount++;
@@ -152,7 +156,9 @@ $("#playground").on("click", function(event) {
         let diedone = new DiedDuck("gold", currentDuck.x - 100, currentDuck.y).createDiedDuck();
         currentDuck.remove();
         $("#playground").append(diedone);
-        $(diedone).animate({ top: "1200px" }, 2000);
+        $(diedone).animate({ top: "1200px" }, 2000,function() {
+            $(diedone).remove();
+        });
         score -= 20;
         $("#scoreplace").text(score);
         ducksCount--;
