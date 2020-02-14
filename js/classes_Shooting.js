@@ -58,7 +58,7 @@ class DiedDuck { //class for creating died ducks
     }
 }
 
-class ExplodedBomb {
+class ExplodedBomb { //class to make the bombs after exploding objects
     constructor(x,y){
         this.left=x;
         this.top=y;
@@ -91,22 +91,29 @@ function playAudio() {
 
 $(".volume").on("click", playAudio);
 
-$(".exit").on("click", function() {
-    window.close();
-})
+
 $("#exit").on("click", function() {
-    window.location.href = "../pg1.html";
+    window.location.href = "../Home.html";
 });
+
+//dog animation
+let dog= new Dog().createDog();
+$("#playground").append(dog);
+function animateDog(){
+    $(dog).animate({top:"420px"},1000);
+    $(dog).animate({top:"580px"},1000);
+}
+
 
 //shooting 
 
-let duckSound = document.getElementsByClassName("ducks")[0];
-let bombSound = document.getElementsByClassName("bombs")[0];
+let duckSound = document.getElementsByClassName("ducks")[0];   //ducks on click sound
+let bombSound = document.getElementsByClassName("bombs")[0];   //bombs onclick sound
 let score = 0;
 let ducksCount=0;
-let gameState=false;
+let gameState=false;    //flag to check if the player has won or not it becomes true if he wins
 $("#playground").on("click", function(event) {
-    if (event.target.src == "http://127.0.0.1:5500/gallery/duck.gif") {        
+    if (event.target.src == "http://127.0.0.1:5500/gallery/duck.gif") {         //red duck onclick actions
         duckSound.play();
         animateDog();
         let currentDuck = event.target;
@@ -128,7 +135,7 @@ $("#playground").on("click", function(event) {
             $(".modal-title").text("GREAT!");
         }
     }
-    else if(event.target.src=="http://127.0.0.1:5500/gallery/goldenduck.gif"){
+    else if(event.target.src=="http://127.0.0.1:5500/gallery/goldenduck.gif"){ //goldenduck onclick actions
         duckSound.play();
         animateDog();
         let currentDuck = event.target;
@@ -150,7 +157,7 @@ $("#playground").on("click", function(event) {
             $(".modal-title").text("GREAT!");
         }
     }
-    else if(event.target.src=="http://127.0.0.1:5500/gallery/blackDuck.gif"){
+    else if(event.target.src=="http://127.0.0.1:5500/gallery/blackDuck.gif"){ //black duck onclick actions
         duckSound.play();
         let currentDuck = event.target;
         let diedone = new DiedDuck("black", currentDuck.x - 100, currentDuck.y).createDiedDuck();
@@ -164,7 +171,7 @@ $("#playground").on("click", function(event) {
         ducksCount--;
         $("#ducksCount").text(ducksCount);
     }
-    else if(event.target.src=="http://127.0.0.1:5500/gallery/source.gif"){
+    else if(event.target.src=="http://127.0.0.1:5500/gallery/source.gif"){ //bomb onclick actions
         let bomb = event.target;
         bombSound.play();
         let explodedbomb=new ExplodedBomb(bomb.x,bomb.y).createExplodedBomb();
@@ -182,13 +189,8 @@ $("#playground").on("click", function(event) {
     }
      
 })
-let dog= new Dog().createDog();
-$("#playground").append(dog);
-function animateDog(){
-    $(dog).animate({top:"420px"},1000);
-    $(dog).animate({top:"580px"},1000);
-}
 
 
 
-export { Duck, Bomb, gameState };
+
+export { Duck, Bomb, gameState }; //export the gamstate flag to game script to stop the animations if the player wins

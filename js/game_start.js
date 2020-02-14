@@ -1,14 +1,17 @@
-import { Duck, Bomb, gameState } from "./magdy.js";
+import { Duck, Bomb, gameState } from "./classes_Shooting.js";
 
-///// 
-
+//data from the localStorge 
 let playername = localStorage.getItem("username");
 let level = localStorage.getItem("level");
 let username = localStorage.getItem("username");
-let scoresArr2 = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
-$("#HighScoreRes").text(scoresArr2);
+let highScoreNum = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"];
+
+//setting these data on game screen
+$("#HighScoreRes").text(highScoreNum);
 $("#usernameplace").text(username.substring(0, 7).toUpperCase());
 
+
+//variables change based on the game level
 
 let redInterval, goldInterval, blackInterval;
 let speed1, speed2, speed3;
@@ -23,13 +26,13 @@ if (level == "easylevel") {
     speed1 = 500;
     speed2 = 3000;
     speed3 = 2000;
-    redInterval = 7000;
-    goldInterval = 20000;
+    redInterval = 4000;
+    goldInterval = 18000;
     blackInterval = 9000;
 }
 
 
-//////////////////////
+/// start button onclick call these functions
 $("#startbtn").on("click", function() {
     $("#startbtn").css("display", "none");
     playDucksSound();
@@ -44,31 +47,39 @@ $("#startbtn").on("click", function() {
         changeCursor();
     }
     updateScoreColor();
+    shotFire();
 });
 
+
+
+
+//function to apply the dark mode in hard level
 function changeBackground() {
     document.getElementById("gamepage").style.backgroundImage = "url('../gallery/dark_mode.jpg')";
 }
 
+//function to change the cursor in dark mode
 function changeCursor() {
     setTimeout(function() {
         document.getElementById("gamepage").style.cursor = "url('../gallery/sniperwhite.png'), auto";
     }, 30000);
 }
 
+//making array of random number to use it in animation  
 let randomPoint = [];
 let i = 0;
-let gameEnd = false;
 for (let i = 0; i < 100; i++) {
     randomPoint.push(Math.floor(Math.random() * 600));
 }
+let gameEnd = false; //flag to check for the game still on play or has ended
 
+//function to play the background ducks sound
 function playDucksSound() {
     let ducksSound = document.getElementsByClassName("ducksBackground")[0];
     ducksSound.loop = true;
     ducksSound.play();
 }
-
+//function to create and animate the red ducks
 function animateRedDuckRandomly() {
 
     setInterval(function() {
@@ -101,6 +112,7 @@ function animateRedDuckRandomly() {
 };
 
 
+//function to create and animate the black ducks
 function animateBlackDuckRandomly() {
     setInterval(function() {
         if (gameEnd == false && gameState == false) {
@@ -128,7 +140,7 @@ function animateBlackDuckRandomly() {
 };
 
 
-
+//function to create and animate the glod ducks
 function animateGoldDuckRandomly() {
     setInterval(function() {
         if (gameEnd == false && gameState == false) {
@@ -154,6 +166,7 @@ function animateGoldDuckRandomly() {
     }, goldInterval);
 };
 
+//function to move the timer bar
 function move() {
     if (i == 0) {
         i = 1;
@@ -161,7 +174,7 @@ function move() {
         var width = 0;
         var id = setInterval(frame, 1000);
     }
-
+ 
     function frame() {
         if (width >= 300) {
             clearInterval(id);
@@ -170,7 +183,6 @@ function move() {
             if (gameEnd == false && gameState == false) {
                 width += 5;
                 elem.style.width = width + "px";
-                // elem.innerHTML = width + " S";
                 if (width >= 150) {
                     $("#myBar").css("background-color", "yellow");
                 }
@@ -185,6 +197,7 @@ function move() {
     }
 };
 
+//function to create animate the bombs
 function createBombRandomly() {
     if (level == "hardlevel") {
         setInterval(function() {
@@ -205,11 +218,10 @@ function createBombRandomly() {
 
 
 
-
 let TO, playerObjj;
-
-
 document.getElementById("modal").addEventListener("click",updateHighScore);
+
+//function to update the highScores
 function updateHighScore(){
     if (parseInt(JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"]) < parseInt($("#scoreplace").text())) {
         console.log("inside if parse");
@@ -231,6 +243,7 @@ function updateHighScore(){
     $("#HighScoreRes").text(scores);
 }
 
+//function to show the modal of gameEnd
 function showModal() {
     TO=setTimeout(() => {
         $("#gamepage").css("cursor","auto");
@@ -242,20 +255,22 @@ function showModal() {
 }
 
 
-
+//function to clear the timeout of the modal if the player wins
 function stopTimeout() {
     clearTimeout(TO);
 }
 
-
+//play again button on click action
 $(".modal-footer :first").on("click", function() {
     location.reload();
 });
 
+//home button onclick action
 $(".modal-footer :last").on("click", function() {
-    window.location.href = "../pg1.html";
+    window.location.href = "../Home.html";
 });
 
+//function to change the color of the score and update the high score if the user exceeds the previous highscore
 function updateScoreColor(){
     setInterval(function(){
         if (parseInt(JSON.parse(localStorage.getItem(`id ${playername} ${level}`))["scores"]) < parseInt($("#scoreplace").text())) {
@@ -263,6 +278,14 @@ function updateScoreColor(){
             $("#HighScoreRes").css("color","rgb(155,235,26)");
             $("#HighScoreRes").text($("#scoreplace").text());
         }
-    },1000)
+    },500)
     
+}
+
+//function to play the sound of the gun on shoot
+function shotFire(){
+    let gunSound = document.getElementsByClassName("gunShooting")[0];
+    $("#playground").on("click",function(){
+        gunSound.play();
+    })    
 }

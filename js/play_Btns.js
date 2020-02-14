@@ -37,13 +37,12 @@ $("#playEasyBtn").on("click", function() { // easy level page
         localStorage.setItem("username", username);
         localStorage.setItem("level", gamelevel);
 
-        window.location.href = "../pg2.html";
+        window.location.href = "../GamePage.html";
     }
 });
 
 
 $("#playHardBtn").on("click", function() { // hard level page 
-    // window.location.href = "../pg2.html";
     username = $("#username").val();
     console.log("inside");
     PageHardLevel = true;
@@ -71,45 +70,8 @@ $("#playHardBtn").on("click", function() { // hard level page
         localStorage.setItem("username", username);
         localStorage.setItem("level", gamelevel);
 
-        window.location.href = "../pg2.html";
+        window.location.href = "../GamePage.html";
+        
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//$("#usernameplace").text(localStorage.getItem("username").substring(0,7).toUpperCase()); 
-
-// let playername = localStorage.getItem("username");
-// let level = localStorage.getItem("level");
-// let playerObj1;
-// let maxScore1 = (JSON.parse(localStorage.getItem(`id ${playername} ${level}`)))["score"];
-
-// some logic && code here  to update score during playing 
-// e.g : score = "100"; 
-
-// $("span:eq(0)").text(playername);
-// $("span:eq(1)").text(maxScore1);
-// $("p").text(level); 
-
-// document.body.addEventListener("click", function(){
-// maxScore1++;
-// $("span:eq(1)").text(maxScore1);
-// playerObj1 = {
-//     "score": maxScore1,
-//     "level": level    
-// };
-// localStorage.setItem(`id ${playername} ${level}`, JSON.stringify(playerObj1)); 
-// });
