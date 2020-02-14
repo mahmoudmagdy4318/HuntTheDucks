@@ -123,7 +123,7 @@ $("#playground").on("click", function(event) {
         $(diedone).animate({ top: "1200px" }, 2000,function() {
             $(diedone).remove();
         });
-        score += 10;
+        score += 5;
         ducksCount++;
         $("#scoreplace").text(score);
         $("#ducksCount").text(ducksCount);
@@ -145,7 +145,7 @@ $("#playground").on("click", function(event) {
         $(diedone).animate({ top: "1200px" }, 2000,function() {
             $(diedone).remove();
         });
-        score += 50;
+        score += 10;
         $("#scoreplace").text(score);
         ducksCount++;
         $("#ducksCount").text(ducksCount);
@@ -166,7 +166,7 @@ $("#playground").on("click", function(event) {
         $(diedone).animate({ top: "1200px" }, 2000,function() {
             $(diedone).remove();
         });
-        score -= 20;
+        score -= 10;
         $("#scoreplace").text(score);
         ducksCount--;
         $("#ducksCount").text(ducksCount);
