@@ -59,10 +59,6 @@
 }
 
 
-/* #usericon{
-    margin-right: 5px;
-    color:rgb(144,207,90);
-} */
 
 #playbtns {
     margin-top: 20px;
@@ -109,7 +105,14 @@
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 40px;
 }
-
+#welcome{
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 50px;
+}
 #gamepage {
     position: fixed;
     background-image: URL("../gallery/gamepage.jpg");

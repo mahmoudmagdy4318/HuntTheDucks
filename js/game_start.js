@@ -9,6 +9,7 @@ let highScoreNum = JSON.parse(localStorage.getItem(`id ${playername} ${level}`))
 //setting these data on game screen
 $("#HighScoreRes").text(highScoreNum);
 $("#usernameplace").text(username.substring(0, 7).toUpperCase());
+$("#welcome").text("WELCOME "+username.substring(0, 7).toUpperCase());
 
 
 //variables change based on the game level
@@ -48,10 +49,13 @@ $("#startbtn").on("click", function() {
     }
     updateScoreColor();
     shotFire();
+    removeWelcome();
 });
 
-
-
+//function to remove the welocme message
+function removeWelcome(){
+    $("#welcome").remove();
+}
 
 //function to apply the dark mode in hard level
 function changeBackground() {
